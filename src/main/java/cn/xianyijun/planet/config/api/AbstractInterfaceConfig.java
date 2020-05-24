@@ -206,7 +206,7 @@ public class AbstractInterfaceConfig extends AbstractMethodConfig {
 
                 List<URL> urls = UrlUtils.parseURLs(address, map);
 
-                if (CollectionUtils.isEmpty(urls)){
+                if (!CollectionUtils.isEmpty(urls)){
                     registryList.addAll(urls.stream().map(url -> {
                         url = url.addParameter(Constants.REGISTRY_KEY, url.getProtocol());
                         url = url.setProtocol(Constants.REGISTRY_PROTOCOL);
